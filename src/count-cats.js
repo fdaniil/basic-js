@@ -1,5 +1,7 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function countCats(matrix) {
-  return matrix.flat().reduce((a,b) => b == "^^" ? a+1 : a, 0);
+  let n = 0;
+  matrix.forEach(v => v.forEach(e => n += e == "^^" ? 1 : 0));
+  return n;
 };
